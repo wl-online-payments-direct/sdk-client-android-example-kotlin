@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/payment_configuration_fragment">
+
+    <fragment
+        android:id="@+id/payment_configuration_fragment"
+        android:name="com.onlinepayments.client.kotlin.exampleapp.xml.fragments.PaymentConfigurationFragment"
+        tools:layout="@layout/fragment_payment_configuration">
+
+        <action
+            android:id="@+id/navigate_to_payment_product_fragment"
+            app:destination="@id/payment_product_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/payment_product_fragment"
+        android:name="com.onlinepayments.client.kotlin.exampleapp.xml.fragments.PaymentProductFragment"
+        tools:layout="@layout/fragment_payment_product">
+
+        <action
+            android:id="@+id/navigate_to_payment_card_fragment"
+            app:destination="@+id/payment_card_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/navigate_to_google_pay_fragment"
+            app:destination="@+id/payment_google_pay_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/payment_card_fragment"
+        android:name="com.onlinepayments.client.kotlin.exampleapp.xml.fragments.PaymentCardFragment"
+        tools:layout="@layout/fragment_payment_card">
+        <action
+            android:id="@+id/navigate_to_payment_result_fragment"
+            app:destination="@+id/payment_result_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/payment_google_pay_fragment"
+        android:name="com.onlinepayments.client.kotlin.exampleapp.xml.fragments.PaymentGooglePayFragment">
+        <action
+            android:id="@+id/navigate_to_payment_result_fragment"
+            app:destination="@+id/payment_result_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/payment_result_fragment"
+        android:name="com.onlinepayments.client.kotlin.exampleapp.xml.fragments.PaymentResultFragment"
+        tools:layout="@layout/fragment_payment_result">
+        <argument
+            android:name="encryptedFieldsData"
+            app:argType="string" />
+        <action
+            android:id="@+id/navigate_to_payment_configuration_fragment"
+            app:destination="@id/payment_configuration_fragment"
+            app:popUpTo="@+id/payment_configuration_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

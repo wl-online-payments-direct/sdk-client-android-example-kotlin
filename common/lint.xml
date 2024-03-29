@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="all">
+        <ignore path="src/main/res" />
+    </issue>
+    <issue id="DiscouragedApi">
+        <ignore path="src/main/java/com/onlinepayments/client/kotlin/exampleapp/common/utils/Translator.kt" />
+    </issue>
+</lint>
+

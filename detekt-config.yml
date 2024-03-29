@@ -1,0 +1,33 @@
+style:
+    excludes: ['**/common/build/**', '**/compose/build/**', '**/xml/build/**']
+    MagicNumber:
+        active: false
+    ReturnCount:
+        excludes: [
+            '**/common/utils/Translator.kt',
+            '**/xml/fragments/PaymentConfigurationFragment.kt'
+        ]
+
+complexity:
+    LongMethod:
+        excludes: ['**/compose/ComposeApp.kt']
+    LongParameterList:
+        excludes: [
+            '**/compose/ComposeApp.kt',
+            '**/compose/card/CardScreen.kt'
+        ]
+        ignoreDefaultParameters: true
+        functionThreshold: 10
+    TooManyFunctions:
+        active: false
+
+naming:
+    FunctionNaming:
+        ignoreAnnotated: ['Composable']
+
+empty-blocks:
+    EmptyClassBlock:
+        excludes: ['**/fileTemplates/internal/**']
+    EmptyFunctionBlock:
+        excludes: ['**/fileTemplates/internal/**']
+        ignoreOverridden: true

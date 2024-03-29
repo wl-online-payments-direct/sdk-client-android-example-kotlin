@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainActivityContainer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.onlinepayments.client.kotlin.exampleapp.xml.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbMain"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMainHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbMain">
+
+        <ImageView
+            android:id="@+id/ivMainMerchantLogo"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/margin_16"
+            android:src="@drawable/logo_example_merchant"
+            app:layout_constraintEnd_toEndOf="@+id/mainStepIndicator"
+            app:layout_constraintStart_toStartOf="@+id/mainStepIndicator"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivMainSecurePaymentImage"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_lock"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSecurePaymentLabel"
+            app:layout_constraintEnd_toStartOf="@+id/tvSecurePaymentLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvSecurePaymentLabel"
+            app:tint="@color/darkGreen" />
+
+        <nl.isaac.android.StepIndicator
+            android:id="@+id/mainStepIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            app:activeStepRadius="36"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSecurePaymentLabel"
+            app:stepDistance="120"
+            app:stepRadius="36" />
+
+        <TextView
+            android:id="@+id/tvSecurePaymentLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/gc.app.general.securePaymentText"
+            android:textSize="11sp"
+            android:textColor="@color/darkGreen"
+            app:layout_constraintEnd_toEndOf="@+id/mainStepIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/ivMainMerchantLogo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcMainNavigationHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clMainHeader"
+        app:navGraph="@navigation/navigation_main" />
+</androidx.constraintlayout.widget.ConstraintLayout>

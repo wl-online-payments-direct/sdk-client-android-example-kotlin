@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name" translatable="false">OnlinePayments example application</string>
+
+    <!-- Payment configuration -->
+    <string name="payment_configuration_client_session_details" translatable="false">Client session details</string>
+    <string name="payment_configuration_client_session_id_hint" translatable="false">Client session ID</string>
+    <string name="payment_configuration_client_session_id_helper_text" translatable="false">Returned in the Server to Server Create Client Session call. This is the identifier of the current session.</string>
+    <string name="payment_configuration_customer_id_hint" translatable="false">Customer ID</string>
+    <string name="payment_configuration_customer_id_helper_text" translatable="false">Returned in the Server to Server Create Client Session call. This is a temporary identifier for you within the session.</string>
+    <string name="payment_configuration_clientApiUrl_hint" translatable="false">Client API URL</string>
+    <string name="payment_configuration_clientApiUrl_helper_text" translatable="false">Returned in the Server to Server Create Client Session call. This URL points to the Online Payments Client API.</string>
+    <string name="payment_configuration_assetsUrl_hint" translatable="false">Assets URL</string>
+    <string name="payment_configuration_assetsUrl_helper_text" translatable="false">Returned in the Server to Server Create Client Session call. This URL can be used to retrieve static resources, such as payment product logo images.</string>
+    <string name="payment_configuration_paste_json" translatable="false">Paste client session JSON response</string>
+    <string name="payment_configuration_merchant_details" translatable="false">Merchant details</string>
+    <string name="payment_configuration_payment_details" translatable="false">Payment details</string>
+    <string name="payment_configuration_amount_hint" translatable="false">Amount in cents</string>
+    <string name="payment_configuration_amount_helper_text" translatable="false">The amount that will be used for this payment. Note that the value must be provided in the smallest possible denominator for the currency, and should be formatted before showing.</string>
+    <string name="payment_configuration_country_code_hint" translatable="false">Country code</string>
+    <string name="payment_configuration_country_code_helper_text" translatable="false">The ISO 3166-1 alpha-2 standard 2-letter Country Code of the consumer.</string>
+    <string name="payment_configuration_currency_code_hint" translatable="false">Currency code</string>
+    <string name="payment_configuration_currency_code_helper_text" translatable="false">The ISO 4217 standard 3-letter Currency Code of the currency in which the payment will be made.</string>
+    <string name="payment_configuration_other_options" translatable="false">Other options</string>
+    <string name="payment_configuration_recurring_payment" translatable="false">Payment is Recurring</string>
+    <string name="payment_configuration_recurring_payment_helper_text" translatable="false">Indicates whether the payment product that is used for this payment should support recurring payments. If set to true, products not supporting recurring will be filtered</string>
+    <string name="payment_configuration_group_payment_products" translatable="false">Group payment products</string>
+    <string name="payment_configuration_group_payment_products_helper_text" translatable="false">Enabling this setting will bundle all Credit Card payment products to a single list item (Payment Product Group). The IIN Details service call can be used to determine what card product is actually used by the consumer.</string>
+    <string name="payment_configuration_configure_environment_production" translatable="false">Environment is production</string>
+    <string name="payment_configuration_configure_google_pay" translatable="false">Configure Google Pay</string>
+    <string name="payment_configuration_merchant_id_hint" translatable="false">Merchant ID</string>
+    <string name="payment_configuration_merchant_id_helper_text" translatable="false">Your merchant ID. You can find this ID in the Configuration Center.</string>
+    <string name="payment_configuration_merchant_name_hint" translatable="false">Merchant name</string>
+    <string name="payment_configuration_merchant_name_helper_text" translatable="false">The name of your business that will be shown to consumers in the Payment Sheet, and in Google Pay payment overviews.</string>
+    <string name="payment_configuration_proceed_to_checkout" translatable="false">Proceed to checkout</string>
+    <string name="payment_configuration_field_not_valid_error" translatable="false">This value is not valid</string>
+
+    <!-- Payment result -->
+    <string name="payment_result_title" translatable="false">Success</string>
+    <string name="payment_result_explanation_text" translatable="false">Tap below to copy the encrypted data that must be used in the Create Payment request.</string>
+    <string name="payment_result_show_encrypted_fields_data" translatable="false">Show encrypted fields data</string>
+    <string name="payment_result_encrypted_fields_data_title" translatable="false">Encrypted fields data:</string>
+    <string name="payment_result_copy_encrypted_fields_data_to_clipboard" translatable="false">Copy to clipboard</string>
+    <string name="payment_result_return_to_start" translatable="false">Return to start</string>
+</resources>
