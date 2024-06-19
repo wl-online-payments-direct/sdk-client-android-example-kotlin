@@ -22,7 +22,7 @@ import com.onlinepayments.sdk.client.android.session.Session
 /**
  * ViewModel for retrieving Google Pay payment product and preparing Google Pay payment request
  */
-class GooglePayPaymentViewModel(private val application: Application) : AndroidViewModel(application) {
+class GooglePayPaymentViewModel(application: Application) : AndroidViewModel(application) {
     private var session: Session? = null
     val paymentProductStatus = MutableLiveData<Status>()
     val encryptedPaymentRequestStatus = MutableLiveData<Status>()
@@ -50,7 +50,7 @@ class GooglePayPaymentViewModel(private val application: Application) : AndroidV
         }
 
         session?.getPaymentProduct(
-            application.applicationContext,
+            getApplication<Application>().applicationContext,
             Constants.GOOGLE_PAY_PRODUCT_ID,
             paymentContext,
             paymentProductResponseListener
@@ -68,6 +68,10 @@ class GooglePayPaymentViewModel(private val application: Application) : AndroidV
             }
         }
 
-        session?.preparePaymentRequest(paymentRequest, application.applicationContext, paymentRequestPreparedListener)
+        session?.preparePaymentRequest(
+            paymentRequest,
+            getApplication<Application>().applicationContext,
+            paymentRequestPreparedListener
+        )
     }
 }

@@ -3,13 +3,18 @@ plugins {
     id("kotlin-android")
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 android {
     namespace = "com.onlinepayments.client.kotlin.exampleapp.common"
 
     defaultConfig {
         minSdk = 21
         compileSdk = 34
-        targetSdk = 34
     }
 
     buildFeatures {
@@ -27,15 +32,6 @@ android {
             buildConfigField "Boolean", "LOGGING_ENABLED", 'false'
         }
         */
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 
     lint {

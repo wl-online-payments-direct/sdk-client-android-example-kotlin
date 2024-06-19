@@ -3,5 +3,9 @@
     <issue id="all">
         <ignore path="src/main/res" />
     </issue>
+    <!-- Dependency gives a false suggestion that a newer version is available -->
+    <issue id="NewerVersionAvailable">
+        <ignore regexp="com.squareup.picasso:picasso*"/>
+    </issue>
 </lint>
 

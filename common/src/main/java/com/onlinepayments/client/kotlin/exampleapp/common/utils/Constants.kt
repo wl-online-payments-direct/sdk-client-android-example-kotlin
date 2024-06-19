@@ -8,11 +8,11 @@ object Constants {
     // GooglePay identifier
     const val GOOGLE_PAY_PRODUCT_ID = "320"
 
-    // Cards payment product group
-    const val PAYMENT_PRODUCT_GROUP_CARDS = "cards"
+    // Card payment method
+    const val PAYMENT_METHOD_CARD = "card"
 
     // Application Identifier, used for identifying the application in network calls
-    const val APPLICATION_IDENTIFIER = "OnlinePayments Android Example Application Kotlin/v1.0.0"
+    const val APPLICATION_IDENTIFIER = "OnlinePayments Android Example Application Kotlin/v1.0.1"
 
     // Constants used for defining payment product fields
     const val CARD_NUMBER = "cardNumber"

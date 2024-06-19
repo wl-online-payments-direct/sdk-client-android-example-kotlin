@@ -1,6 +1,13 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 android {
@@ -19,11 +26,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -31,16 +33,8 @@ android {
         }
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
     }
 
     lint {
@@ -78,7 +72,7 @@ dependencies {
     // UI
     val materialVersion = rootProject.extra["material_version"]
     implementation("com.google.android.material:material:$materialVersion")
-    implementation("io.coil-kt:coil-compose:2.2.2")
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
     // Jetpack Compose
     val composeVersion = rootProject.extra["compose_version"]
@@ -89,8 +83,8 @@ dependencies {
     val composeMaterialVersion = rootProject.extra["compose_material_version"]
     implementation("androidx.compose.material:material:$composeMaterialVersion")
     implementation("androidx.compose.material:material-icons-extended:$composeMaterialVersion")
-    implementation("androidx.activity:activity-compose:1.8.2")
-    implementation("com.google.accompanist:accompanist-navigation-animation:0.32.0")
+    implementation("androidx.activity:activity-compose:1.9.0")
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.34.0")
     
     // Google pay
     val googlePayVersion = rootProject.extra["googlePay_version"]

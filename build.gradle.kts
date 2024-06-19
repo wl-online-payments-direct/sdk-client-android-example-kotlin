@@ -2,36 +2,34 @@
 
 buildscript {
     extra.apply {
-        set("core_version", "1.12.0")
+        set("core_version", "1.13.1")
         set("appCompat_version", "1.6.1")
-        set("material_version", "1.11.0")
-        set("lifecycle_version", "2.7.0")
+        set("material_version", "1.12.0")
+        set("lifecycle_version", "2.8.0")
         set("navigation_version", "2.7.7")
-        set("compose_version", "1.6.2")
+        set("compose_version", "1.6.7")
         set("compose_material_version", "1.6.2")
-        set("coroutines_version", "1.7.3")
+        set("coroutines_version", "1.8.0")
         set("googlePay_version", "19.3.0")
-        set("onlinePaymentsSDK_version", "2.3.0")
+        set("onlinePaymentsSDK_version", "2.4.0")
         set("gson_version", "2.10.1")
-        set("kotlin_jvm_target", "8")
-        set("java_version", JavaVersion.VERSION_1_8)
-        set("data_store_version", "1.0.0")
-        set("kotlin_serialization_version", "1.4.1")
+        set("data_store_version", "1.1.1")
+        set("kotlin_serialization_version", "1.6.3")
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.2.2")
+        classpath("com.android.tools.build:gradle:8.4.1")
         val navigationVersion = rootProject.extra["navigation_version"]
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.0")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
 task("clean") {
-    delete(rootProject.buildDir)
+    delete(rootProject.layout.buildDirectory)
 }

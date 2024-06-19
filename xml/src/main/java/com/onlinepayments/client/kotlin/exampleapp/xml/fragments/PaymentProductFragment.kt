@@ -14,6 +14,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.onlinepayments.client.kotlin.exampleapp.common.PaymentSharedViewModel
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.Constants
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.PaymentScreen
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Status
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
@@ -90,10 +91,10 @@ class PaymentProductFragment : Fragment() {
         when (basicPaymentItem) {
             is BasicPaymentProduct -> {
                 when {
-                    basicPaymentItem.paymentProductGroup.equals(PAYMENT_PRODUCT_GROUP_CARDS, ignoreCase = true) -> {
+                    basicPaymentItem.paymentMethod.equals(Constants.PAYMENT_METHOD_CARD, ignoreCase = true) -> {
                         findNavController().navigate(PaymentProductFragmentDirections.navigateToPaymentCardFragment())
                     }
-                    basicPaymentItem.id.equals(PAYMENT_PRODUCT_ID_GOOGLE_PAY) -> {
+                    basicPaymentItem.id.equals(Constants.GOOGLE_PAY_PRODUCT_ID) -> {
                         findNavController().navigate(PaymentProductFragmentDirections.navigateToGooglePayFragment())
                     }
                     else -> {
@@ -119,12 +120,5 @@ class PaymentProductFragment : Fragment() {
                 text = Translator.translateString("gc.general.errors.productUnavailable", requireContext())
             }
         }.show()
-    }
-
-    private companion object {
-        // The correct payment product is initialized based on this identifier
-        // In this example only Cards and Google Pay are implemented
-        const val PAYMENT_PRODUCT_GROUP_CARDS = "cards"
-        const val PAYMENT_PRODUCT_ID_GOOGLE_PAY = "320"
     }
 }

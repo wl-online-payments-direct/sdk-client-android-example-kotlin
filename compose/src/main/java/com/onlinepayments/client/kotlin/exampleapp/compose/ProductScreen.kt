@@ -206,8 +206,8 @@ private fun navigateToScreen(
 
         is BasicPaymentProduct -> {
             when {
-                selectedPaymentProduct.paymentProductGroup.equals(
-                    Constants.PAYMENT_PRODUCT_GROUP_CARDS,
+                selectedPaymentProduct.paymentMethod.equals(
+                    Constants.PAYMENT_METHOD_CARD,
                     ignoreCase = true
                 ) -> {
                     navController.navigate(PaymentScreen.CARD.route)

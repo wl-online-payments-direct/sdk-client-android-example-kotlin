@@ -31,7 +31,7 @@ import com.onlinepayments.sdk.client.android.session.Session
 /**
  * ViewModel for retrieving payment products, also validates all card fields
  */
-class PaymentCardViewModel(private val application: Application) : AndroidViewModel(application) {
+class PaymentCardViewModel(application: Application) : AndroidViewModel(application) {
     lateinit var session: Session
     lateinit var paymentContext: PaymentContext
 
@@ -115,7 +115,7 @@ class PaymentCardViewModel(private val application: Application) : AndroidViewMo
         }
 
         session.getIinDetails(
-            application.applicationContext,
+            getApplication<Application>().applicationContext,
             issuerIdentificationNumber,
             iinLookupResponseListener,
             paymentContext
@@ -196,7 +196,7 @@ class PaymentCardViewModel(private val application: Application) : AndroidViewMo
         }
 
         session.getPaymentProduct(
-            application.applicationContext,
+            getApplication<Application>().applicationContext,
             paymentProductId,
             paymentContext,
             paymentProductResponseListener
@@ -223,7 +223,7 @@ class PaymentCardViewModel(private val application: Application) : AndroidViewMo
 
             session.preparePaymentRequest(
                 paymentRequest,
-                application.applicationContext,
+                getApplication<Application>().applicationContext,
                 paymentRequestPreparedListener
             )
         }

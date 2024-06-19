@@ -5,6 +5,12 @@ plugins {
     id ("androidx.navigation.safeargs.kotlin")
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 android {
     namespace = "com.onlinepayments.client.kotlin.exampleapp.xml"
 
@@ -29,15 +35,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 
     lint {
@@ -77,7 +74,10 @@ dependencies {
     // UI
     val materialVersion = rootProject.extra["material_version"]
     implementation("com.google.android.material:material:$materialVersion")
-    implementation("com.squareup.picasso:picasso:2.71828")
+    // The following dependency gives a false suggestion that a newer version is available,
+    // 2.8 is the most recent version.
+    //noinspection GradleDependency
+    implementation("com.squareup.picasso:picasso:2.8")
     implementation(files("libs/stepindicator-release.aar"))
 
     // Google Pay

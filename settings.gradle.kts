@@ -6,6 +6,12 @@ dependencyResolutionManagement {
     }
 }
 
+pluginManagement {
+    plugins {
+        id("org.jetbrains.kotlin.android") version "2.0.0"
+    }
+}
+
 rootProject.name = "OnlinePaymentsExample"
 include(":compose")
 include(":common")
