@@ -13,19 +13,19 @@ import com.onlinepayments.sdk.client.android.model.validation.ValidationRuleRang
  * Maps validation error message id to complete error formatted in the currently selected locale
  */
 object ValidationErrorMessageMapper {
-    private const val VALIDATION_LENGTH_EXCEPTION_EXACT = "length.exact"
-    private const val VALIDATION_LENGTH_EXCEPTION_MAX = "length.max"
-    private const val VALIDATION_LENGTH_EXCEPTION_BETWEEN = "length.between"
+    private const val VALIDATION_LENGTH_EXCEPTION_EXACT = "length_exact"
+    private const val VALIDATION_LENGTH_EXCEPTION_MAX = "length_max"
+    private const val VALIDATION_LENGTH_EXCEPTION_BETWEEN = "length_between"
     private const val VALIDATION_LENGTH_MIN_PLACEHOLDER = "{minLength}"
     private const val VALIDATION_LENGTH_MAX_PLACEHOLDER = "{maxLength}"
 
     fun mapValidationErrorMessageToString(context: Context, validationErrorMessage: ValidationErrorMessage): String {
-        var errorMessage = Translator.getValidationMessage(validationErrorMessage.errorMessage, context)
+        var errorMessage = StringProvider.getValidationMessage(validationErrorMessage.errorMessage, context)
 
         return when (val validationRule = validationErrorMessage.rule) {
             is ValidationRuleLength -> {
                 errorMessage =
-                    Translator.getValidationMessage(mapLengthExceptionToString(validationRule), context)
+                    StringProvider.getValidationMessage(mapLengthExceptionToString(validationRule), context)
                 replaceLengthPlaceholders(errorMessage, validationRule.minLength, validationRule.maxLength)
             }
             is ValidationRuleRange -> {

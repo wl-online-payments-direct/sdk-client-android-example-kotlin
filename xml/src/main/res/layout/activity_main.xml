@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16"
-            android:text="@string/gc.app.general.securePaymentText"
+            android:text="@string/app_securePaymentText"
             android:textSize="11sp"
             android:textColor="@color/darkGreen"
             app:layout_constraintEnd_toEndOf="@+id/mainStepIndicator"

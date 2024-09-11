@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">OnlinePayments example application</string>
 
+    <!-- Global App -->
+    <string name="app_securePaymentText">Secure payment</string>
+
     <!-- Payment configuration -->
     <string name="payment_configuration_client_session_details" translatable="false">Client session details</string>
     <string name="payment_configuration_client_session_id_hint" translatable="false">Client session ID</string>
@@ -34,6 +37,76 @@
     <string name="payment_configuration_proceed_to_checkout" translatable="false">Proceed to checkout</string>
     <string name="payment_configuration_field_not_valid_error" translatable="false">This value is not valid</string>
 
+    <!-- Payment Products -->
+    <string name="paymentProductDetails_payButton">Pay</string>
+    <string name="paymentProductDetails_rememberMe">Remember my details for future purchases</string>
+
+    <!-- Payment Product Selection -->
+    <string name="paymentProductSelection_accountsOnFileTitle">Previously used accounts</string>
+    <string name="paymentProductSelection_paymentProductsTitle">Other payment products</string>
+
+    <!-- Payment Product Fields -->
+    <string name="paymentProductFields_accountHolderName_label">Account holder name</string>
+    <string name="paymentProductFields_accountHolderName_placeholder">John Doe</string>
+    <string name="paymentProductFields_accountNumber_label">Account number</string>
+    <string name="paymentProductFields_accountNumber_placeholder">Account number</string>
+    <string name="paymentProductFields_additionalInfo_label">Additional address information</string>
+    <string name="paymentProductFields_additionalInfo_placeholder">Additional address information</string>
+    <string name="paymentProductFields_bankCode_label">Bank code</string>
+    <string name="paymentProductFields_bankCode_placeholder">Bank code</string>
+    <string name="paymentProductFields_bic_label">BIC / Swift code</string>
+    <string name="paymentProductFields_bic_placeholder">BIC / Swift code</string>
+    <string name="paymentProductFields_cardNumber_label">Card number</string>
+    <string name="paymentProductFields_cardNumber_placeholder">**** **** **** ****</string>
+    <string name="paymentProductFields_cardholderName_label">Cardholder name</string>
+    <string name="paymentProductFields_cardholderName_placeholder">John Doe</string>
+    <string name="paymentProductFields_city_label">City</string>
+    <string name="paymentProductFields_city_placeholder">City</string>
+    <string name="paymentProductFields_companyName_label">Company name</string>
+    <string name="paymentProductFields_companyName_placeholder">Company name</string>
+    <string name="paymentProductFields_countryCode_label">Country</string>
+    <string name="paymentProductFields_countryCode_placeholder">Country</string>
+    <string name="paymentProductFields_cvv_label">CVV</string>
+    <string name="paymentProductFields_cvv_placeholder">123</string>
+    <string name="paymentProductFields_dateOfBirth_label">Date of birth</string>
+    <string name="paymentProductFields_dateOfBirth_placeholder">dd-mm-yyyy</string>
+    <string name="paymentProductFields_emailAddress_label">E-mail address</string>
+    <string name="paymentProductFields_emailAddress_placeholder">you@domain.com</string>
+    <string name="paymentProductFields_expiryDate_label">Expiry date</string>
+    <string name="paymentProductFields_expiryDate_placeholder">MM/YY</string>
+    <string name="paymentProductFields_firstName_label">First name</string>
+    <string name="paymentProductFields_firstName_placeholder">First name</string>
+    <string name="paymentProductFields_fiscalNumber_label">Fiscal number</string>
+    <string name="paymentProductFields_fiscalNumber_placeholder">Fiscal number</string>
+    <string name="paymentProductFields_houseNumber_label">House number</string>
+    <string name="paymentProductFields_houseNumber_placeholder">House number</string>
+    <string name="paymentProductFields_iban_label">IBAN</string>
+    <string name="paymentProductFields_iban_placeholder">IBAN</string>
+    <string name="paymentProductFields_issuerId_label">Select your bank</string>
+    <string name="paymentProductFields_issuerId_placeholder">Select your bank</string>
+    <string name="paymentProductFields_phoneNumber_label">Phone number</string>
+    <string name="paymentProductFields_phoneNumber_placeholder">Phone number</string>
+    <string name="paymentProductFields_residentIdName_label">Resident name </string>
+    <string name="paymentProductFields_residentIdName_placeholder">Resident name </string>
+    <string name="paymentProductFields_residentMobilePhoneNumber_label">Cell phone number</string>
+    <string name="paymentProductFields_residentMobilePhoneNumber_placeholder">+ 86*** **** ****</string>
+    <string name="paymentProductFields_stateCode_label">State code</string>
+    <string name="paymentProductFields_stateCode_placeholder">State code</string>
+    <string name="paymentProductFields_street_label">Street</string>
+    <string name="paymentProductFields_street_placeholder">Street</string>
+    <string name="paymentProductFields_surname_label">Surname</string>
+    <string name="paymentProductFields_surname_placeholder">Surname</string>
+    <string name="paymentProductFields_termsAndConditions_label">Accept {link}</string>
+    <string name="paymentProductFields_termsAndConditions_link_label">Terms and conditions</string>
+    <string name="paymentProductFields_title_label">Title</string>
+    <string name="paymentProductFields_title_placeholder">Title</string>
+    <string name="paymentProductFields_zip_label">Zip code</string>
+    <string name="paymentProductFields_zip_placeholder">Zip code</string>
+
+    <!-- Overridden placeholders for specific products -->
+    <string name="paymentProducts_2_paymentProductFields_cardNumber_placeholder">**** ****** *****</string>
+    <string name="paymentProducts_2_paymentProductFields_cvv_placeholder">1234</string>
+
     <!-- Payment result -->
     <string name="payment_result_title" translatable="false">Success</string>
     <string name="payment_result_explanation_text" translatable="false">Tap below to copy the encrypted data that must be used in the Create Payment request.</string>
@@ -41,4 +114,25 @@
     <string name="payment_result_encrypted_fields_data_title" translatable="false">Encrypted fields data:</string>
     <string name="payment_result_copy_encrypted_fields_data_to_clipboard" translatable="false">Copy to clipboard</string>
     <string name="payment_result_return_to_start" translatable="false">Return to start</string>
+
+    <!-- Validation Error Messages -->
+    <string name="validationErrors_allowedInContext_label">The card you entered is not supported. Please enter another card or try another payment method.</string>
+    <string name="validationErrors_cardholderName_label">Please provide the name as exactly written on your card</string>
+    <string name="validationErrors_emailAddress_label">Please provide a valid email address</string>
+    <string name="validationErrors_expirationDate_label">Please provide a valid expiration date</string>
+    <string name="validationErrors_fixedList_label">Please select one of the values from the list</string>
+    <string name="validationErrors_iban_label">Please enter a valid IBAN</string>
+    <string name="validationErrors_iin_label">Please provide a valid card number</string>
+    <string name="validationErrors_invalidContent_label">Please provide a value of the correct format</string>
+    <string name="validationErrors_length_between_label">Please provide a value between {minLength} and {maxLength} characters</string>
+    <string name="validationErrors_length_exact_label">Please provide a value of exactly {maxLength} characters</string>
+    <string name="validationErrors_length_label">Please provide a value of maximum of {maxLength} characters</string>
+    <string name="validationErrors_length_max_label">Please provide a value of maximum of {maxLength} characters</string>
+    <string name="validationErrors_luhn_label">Please provide a valid card number</string>
+    <string name="validationErrors_range_label">Please provide a value between {minValue} and {maxValue}</string>
+    <string name="validationErrors_regularExpression_label">Please provide a value of the correct format</string>
+    <string name="validationErrors_required_label">Please provide a value</string>
+    <string name="validationErrors_residentIdName_label">Please provide the exact name as written on your Resident Identity Card</string>
+    <string name="validationErrors_residentIdNumber_label">Please provide the exact number as written on your Resident Identity Card</string>
+    <string name="validationErrors_termsAndConditions_label">Please accept the terms and conditions</string>
 </resources>

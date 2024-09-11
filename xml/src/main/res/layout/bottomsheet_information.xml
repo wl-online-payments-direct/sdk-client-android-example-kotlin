@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toStartOf="@+id/ivInformationImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        tools:text="@string/gc.general.errors.productUnavailable" />
+        tools:text="@string/errors_productUnavailable" />
 
     <ImageView
         android:id="@+id/ivInformationImage"

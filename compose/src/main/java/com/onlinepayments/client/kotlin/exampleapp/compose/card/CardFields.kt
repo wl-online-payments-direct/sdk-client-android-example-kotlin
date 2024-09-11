@@ -42,5 +42,5 @@ data class CardFields(
         leadingIcon = Icons.Filled.Person,
         id = CARD_HOLDER
     ),
-    val rememberCardField: CheckBoxField = CheckBoxField("gc.app.paymentProductDetails.rememberMe")
+    val rememberCardField: CheckBoxField = CheckBoxField("paymentProductDetails_rememberMe")
 )

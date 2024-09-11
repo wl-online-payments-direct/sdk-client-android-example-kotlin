@@ -26,7 +26,7 @@ import com.onlinepayments.client.kotlin.exampleapp.common.utils.FormValidationRe
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.PaymentCardUIState
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.PaymentScreen
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Status
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.ValidationErrorMessageMapper
 import com.onlinepayments.client.kotlin.exampleapp.xml.R
 import com.onlinepayments.client.kotlin.exampleapp.xml.card.CardFieldAfterTextChangedListener
@@ -147,14 +147,14 @@ class PaymentCardFragment : Fragment() {
                 is PaymentCardUIState.IinFailed -> {
                     when (paymentCardUiState.throwable.message) {
                         IinStatus.UNKNOWN.name -> binding.paymentCardFieldCardNumber.setError(
-                            Translator.translateString(
-                                "gc.general.paymentProductFields.validationErrors.iin.label",
+                            StringProvider.retrieveString(
+                                "validationErrors_iin_label",
                                 requireContext()
                             )
                         )
                         IinStatus.EXISTING_BUT_NOT_ALLOWED.name -> binding.paymentCardFieldCardNumber.setError(
-                            Translator.translateString(
-                                "gc.general.paymentProductFields.validationErrors.allowedInContext.label",
+                            StringProvider.retrieveString(
+                                "validationErrors_allowedInContext_label",
                                 requireContext()
                             )
                         )

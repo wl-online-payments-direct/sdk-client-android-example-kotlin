@@ -12,7 +12,7 @@ object Constants {
     const val PAYMENT_METHOD_CARD = "card"
 
     // Application Identifier, used for identifying the application in network calls
-    const val APPLICATION_IDENTIFIER = "OnlinePayments Android Example Application Kotlin/v1.0.1"
+    const val APPLICATION_IDENTIFIER = "OnlinePayments Android Example Application Kotlin/v1.1.0"
 
     // Constants used for defining payment product fields
     const val CARD_NUMBER = "cardNumber"

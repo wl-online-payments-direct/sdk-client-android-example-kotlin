@@ -33,7 +33,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.onlinepayments.client.kotlin.exampleapp.common.R
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.PaymentScreen
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 import com.onlinepayments.client.kotlin.exampleapp.compose.theme.Green
 
 @Composable
@@ -86,7 +86,7 @@ fun HeaderContent(showBackButton: Boolean, onBackPressed: () -> Unit) {
                 modifier = Modifier.size(16.dp)
             )
             Text(
-                text = Translator.translateString("gc.app.general.securePaymentText", LocalContext.current),
+                text = StringProvider.retrieveString("app_securePaymentText", LocalContext.current),
                 color = Green,
                 fontSize = 11.sp,
                 modifier = Modifier

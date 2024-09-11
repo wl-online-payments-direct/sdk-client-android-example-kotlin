@@ -17,7 +17,7 @@ import com.onlinepayments.client.kotlin.exampleapp.common.PaymentSharedViewModel
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Constants
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.PaymentScreen
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Status
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 import com.onlinepayments.client.kotlin.exampleapp.xml.R
 import com.onlinepayments.client.kotlin.exampleapp.xml.databinding.FragmentPaymentProductBinding
 import com.onlinepayments.client.kotlin.exampleapp.xml.product.PaymentProductAdapter
@@ -67,15 +67,15 @@ class PaymentProductFragment : Fragment() {
                 val basicPaymentItems = paymentProductsStatus.data as BasicPaymentItems
                 if (basicPaymentItems.accountsOnFile.isNotEmpty()) {
                     paymentProducts.add(
-                        Translator.translateString(
-                            "gc.app.paymentProductSelection.accountsOnFileTitle",
+                        StringProvider.retrieveString(
+                            "paymentProductSelection_accountsOnFileTitle",
                             requireContext()
                         )
                     )
                     paymentProducts.addAll(basicPaymentItems.accountsOnFile)
                     paymentProducts.add(
-                        Translator.translateString(
-                            "gc.app.paymentProductSelection.paymentProductsTitle",
+                        StringProvider.retrieveString(
+                            "paymentProductSelection_paymentProductsTitle",
                             requireContext()
                         )
                     )
@@ -117,7 +117,7 @@ class PaymentProductFragment : Fragment() {
         BottomSheetDialog(requireContext()).apply {
             setContentView(R.layout.bottomsheet_information)
             findViewById<TextView>(R.id.tvInformationText)?.apply {
-                text = Translator.translateString("gc.general.errors.productUnavailable", requireContext())
+                text = StringProvider.retrieveString("errors.productUnavailable", requireContext())
             }
         }.show()
     }

@@ -20,7 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 import com.onlinepayments.client.kotlin.exampleapp.compose.theme.DarkGray
 
 @Composable
@@ -44,7 +44,7 @@ fun LabelledCheckbox(
                 enabled = checkBoxField.enabled.value
             )
             Text(
-                text = Translator.translateString(checkBoxField.stringResource, LocalContext.current),
+                text = StringProvider.retrieveString(checkBoxField.stringResource, LocalContext.current),
                 modifier = Modifier
                     .padding(start = 4.dp)
                     .align(Alignment.CenterVertically)

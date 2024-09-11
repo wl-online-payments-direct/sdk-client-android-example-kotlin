@@ -71,7 +71,7 @@
                     android:id="@+id/cbPaymentCardSaveCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/gc.app.paymentProductDetails.rememberMe"
+                    android:text="@string/paymentProductDetails_rememberMe"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/paymentCardFieldCardholderName" />
@@ -81,7 +81,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:enabled="false"
-                    android:text="@string/gc.app.paymentProductDetails.payButton"
+                    android:text="@string/paymentProductDetails_payButton"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cbPaymentCardSaveCard" />

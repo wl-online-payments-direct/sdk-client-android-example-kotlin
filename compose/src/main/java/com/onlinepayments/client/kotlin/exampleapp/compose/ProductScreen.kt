@@ -33,7 +33,7 @@ import com.onlinepayments.client.kotlin.exampleapp.common.utils.Constants
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Constants.CARD_NUMBER
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.PaymentScreen
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Status
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 import com.onlinepayments.client.kotlin.exampleapp.compose.components.BottomSheetContent
 import com.onlinepayments.client.kotlin.exampleapp.compose.components.FailedText
 import com.onlinepayments.client.kotlin.exampleapp.compose.components.ProgressIndicator
@@ -106,8 +106,8 @@ private fun PaymentProductItems(
         if (basicPaymentItems.accountsOnFile.isNotEmpty()) {
             item {
                 SectionHeader(
-                    text = Translator.translateString(
-                        "gc.app.paymentProductSelection.accountsOnFileTitle",
+                    text = StringProvider.retrieveString(
+                        "paymentProductSelection_accountsOnFileTitle",
                         LocalContext.current
                     ),
                     modifier = Modifier.padding(bottom = 8.dp)
@@ -134,8 +134,8 @@ private fun PaymentProductItems(
 
             item {
                 SectionHeader(
-                    text = Translator.translateString(
-                        "gc.app.paymentProductSelection.paymentProductsTitle",
+                    text = StringProvider.retrieveString(
+                        "paymentProductSelection_paymentProductsTitle",
                         LocalContext.current
                     ),
                     modifier = Modifier.padding(top = 12.dp, bottom = 8.dp)
@@ -217,14 +217,14 @@ private fun navigateToScreen(
                 }
                 else -> {
                     showBottomSheet(
-                        BottomSheetContent(Translator.translateString("gc.general.errors.productUnavailable", context))
+                        BottomSheetContent(StringProvider.retrieveString("errors.productUnavailable", context))
                     )
                 }
             }
         }
         else -> {
             showBottomSheet(
-                BottomSheetContent(Translator.translateString("gc.general.errors.productUnavailable", context))
+                BottomSheetContent(StringProvider.retrieveString("errors.productUnavailable", context))
             )
         }
     }

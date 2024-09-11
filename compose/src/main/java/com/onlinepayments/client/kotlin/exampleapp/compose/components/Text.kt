@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 
 @Composable
 fun SectionTitle(text: String, modifier: Modifier) {
@@ -35,7 +35,7 @@ fun FailedText() {
             .padding(16.dp)
     ) {
         Text(
-            text = Translator.translateString("gc.general.errors.techicalProblem", LocalContext.current),
+            text = StringProvider.retrieveString("errors.technicalProblem", LocalContext.current),
             textAlign = TextAlign.Center
         )
     }

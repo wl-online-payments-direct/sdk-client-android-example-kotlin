@@ -11,7 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.Constants.CARD_NUMBER
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 import com.onlinepayments.client.kotlin.exampleapp.common.utils.ValidationErrorMessageMapper
 import com.onlinepayments.client.kotlin.exampleapp.compose.components.TextFieldState
 import com.onlinepayments.sdk.client.android.model.paymentproduct.AccountOnFile
@@ -94,7 +94,11 @@ class CardScreenViewModel(application: Application) : AndroidViewModel(applicati
         context: Context
     ) {
         cardFields.cardNumberField.apply {
-            label = Translator.getPaymentProductFieldPlaceholderText(paymentProductId, paymentProductField.id, context)
+            label = StringProvider.getPaymentProductFieldPlaceholderText(
+                paymentProductId,
+                paymentProductField.id,
+                context
+            )
             mask = paymentProductField.displayHints.mask
             maxSize = validationRuleLength?.maxLength ?: Int.MAX_VALUE
             trailingImageUrl = logoUrl
@@ -118,7 +122,11 @@ class CardScreenViewModel(application: Application) : AndroidViewModel(applicati
         context: Context
     ) {
         cardFields.expiryDateField.apply {
-            label = Translator.getPaymentProductFieldPlaceholderText(paymentProductId, paymentProductField.id, context)
+            label = StringProvider.getPaymentProductFieldPlaceholderText(
+                paymentProductId,
+                paymentProductField.id,
+                context
+            )
             mask = paymentProductField.displayHints.mask
             maxSize = validationRuleLength?.maxLength ?: Int.MAX_VALUE
             this.paymentProductField = paymentProductField
@@ -141,7 +149,11 @@ class CardScreenViewModel(application: Application) : AndroidViewModel(applicati
         context: Context
     ) {
         cardFields.securityNumberField.apply {
-            label = Translator.getPaymentProductFieldPlaceholderText(paymentProductId, paymentProductField.id, context)
+            label = StringProvider.getPaymentProductFieldPlaceholderText(
+                paymentProductId,
+                paymentProductField.id,
+                context
+            )
             mask = paymentProductField.displayHints.mask
             maxSize = validationRuleLength?.maxLength ?: Int.MAX_VALUE
             tooltipImageUrl = paymentProductField.displayHints.tooltip.imageURL
@@ -165,7 +177,11 @@ class CardScreenViewModel(application: Application) : AndroidViewModel(applicati
         context: Context
     ) {
         cardFields.cardHolderField.apply {
-            label = Translator.getPaymentProductFieldPlaceholderText(paymentProductId, paymentProductField.id, context)
+            label = StringProvider.getPaymentProductFieldPlaceholderText(
+                paymentProductId,
+                paymentProductField.id,
+                context
+            )
             this.paymentProductField = paymentProductField
         }
         if (accountOnFile != null && !isAccountOnFileDataLoaded) {

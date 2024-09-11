@@ -16,7 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.onlinepayments.client.kotlin.exampleapp.common.utils.Translator
+import com.onlinepayments.client.kotlin.exampleapp.common.utils.StringProvider
 import com.onlinepayments.client.kotlin.exampleapp.xml.R
 import com.onlinepayments.sdk.client.android.model.paymentproduct.PaymentProductField
 import com.onlinepayments.sdk.client.android.model.paymentproduct.displayhints.DisplayHintsProductFields.PreferredInputType
@@ -71,7 +71,7 @@ class PaymentCardField(context: Context, attributeSet: AttributeSet): Constraint
         this.cardFieldAfterTextChangedListener = cardFieldAfterTextChangedListener
         cardField.visibility = View.VISIBLE
         cardFieldTextInputEditText.hint =
-            Translator.getPaymentProductFieldPlaceholderText(paymentProductId, paymentProductField.id, context)
+            StringProvider.getPaymentProductFieldPlaceholderText(paymentProductId, paymentProductField.id, context)
         setEditTextInputType(this.paymentProductField.displayHints.preferredInputType)
         addTooltipIfAvailable()
         addMaskTextWatcherWhenAvailable()

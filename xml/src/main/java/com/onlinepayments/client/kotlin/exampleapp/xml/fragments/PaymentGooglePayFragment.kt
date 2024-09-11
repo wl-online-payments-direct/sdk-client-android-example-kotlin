@@ -148,15 +148,19 @@ class PaymentGooglePayFragment : BottomSheetDialogFragment() {
      * After the user has successfully completed the Google Pay steps fetch token data and prepare a payment
      */
     private fun handleGooglePaySuccess(paymentData: PaymentData) {
-        val paymentInformation = paymentData.toJson()
+        val paymentDataJSONString = paymentData.toJson()
 
         try {
             // Token will be null if PaymentDataRequest was not constructed using fromJson(String).
-            val googlePayToken = JSONObject(paymentInformation)
+            val unformattedGooglePayToken = JSONObject(paymentDataJSONString)
                 .getJSONObject("paymentMethodData")
                 .getJSONObject("tokenizationData").getString("token")
 
-            paymentGooglePayViewModel.paymentRequest.setValue(GOOGLE_PAY_TOKEN_FIELD_ID, googlePayToken)
+            // Token needs to be formatted when using it to create a payment
+            // with mobilePaymentMethodSpecificInput.encryptedPaymentData
+            val formattedGooglePayToken = JSONObject.quote(unformattedGooglePayToken)
+
+            paymentGooglePayViewModel.paymentRequest.setValue(GOOGLE_PAY_TOKEN_FIELD_ID, formattedGooglePayToken)
             paymentGooglePayViewModel.encryptGooglePayPayment()
         } catch (exception: JSONException) {
             paymentSharedViewModel.globalErrorMessage.value = "Google pay token error ${exception.message}"
