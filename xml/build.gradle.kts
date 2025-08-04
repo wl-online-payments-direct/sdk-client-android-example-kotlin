@@ -1,8 +1,8 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id ("kotlin-kapt")
-    id ("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 java {
@@ -62,7 +62,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:$appCompatVersion")
     val navigationVersion = rootProject.extra["navigation_version"]
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
     implementation("androidx.cardview:cardview:1.0.0")
     val dataStoreVersion = rootProject.extra["data_store_version"]
     implementation("androidx.datastore:datastore:$dataStoreVersion")

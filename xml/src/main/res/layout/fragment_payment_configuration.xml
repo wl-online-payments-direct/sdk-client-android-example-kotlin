@@ -223,37 +223,13 @@
                 app:layout_constraintTop_toTopOf="@+id/cbPaymentConfigurationRecurringPayment" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/cbPaymentConfigurationGroupPaymentProducts"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/payment_configuration_group_payment_products"
-                app:layout_constraintEnd_toStartOf="@+id/ivPaymentConfigurationGroupPaymentProductsHelperIcon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cbPaymentConfigurationRecurringPayment" />
-
-            <ImageView
-                android:id="@+id/ivPaymentConfigurationGroupPaymentProductsHelperIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_8"
-                android:layout_marginEnd="@dimen/margin_12"
-                android:src="@drawable/ic_info"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                app:layout_constraintBottom_toBottomOf="@+id/cbPaymentConfigurationGroupPaymentProducts"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cbPaymentConfigurationGroupPaymentProducts"
-                app:layout_constraintTop_toTopOf="@+id/cbPaymentConfigurationGroupPaymentProducts" />
-
-            <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/cbEnvironmentIsProduction"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/payment_configuration_configure_environment_production"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cbPaymentConfigurationGroupPaymentProducts" />
+                app:layout_constraintTop_toBottomOf="@+id/cbPaymentConfigurationRecurringPayment" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/cbPaymentConfigurationGooglePay"

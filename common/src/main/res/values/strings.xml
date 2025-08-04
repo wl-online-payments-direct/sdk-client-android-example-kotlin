@@ -1,3 +1,13 @@
+<!--
+  ~ Do not remove or alter the notices in this preamble.
+  ~
+  ~ Copyright © 2025 Worldline and/or its affiliates.
+  ~
+  ~ All rights reserved. License grant and user rights and obligations according to the applicable license agreement.
+  ~
+  ~ Please contact Worldline for questions regarding license and user rights.
+  -->
+
 <resources>
     <string name="app_name" translatable="false">OnlinePayments example application</string>
 
@@ -26,8 +36,6 @@
     <string name="payment_configuration_other_options" translatable="false">Other options</string>
     <string name="payment_configuration_recurring_payment" translatable="false">Payment is Recurring</string>
     <string name="payment_configuration_recurring_payment_helper_text" translatable="false">Indicates whether the payment product that is used for this payment should support recurring payments. If set to true, products not supporting recurring will be filtered</string>
-    <string name="payment_configuration_group_payment_products" translatable="false">Group payment products</string>
-    <string name="payment_configuration_group_payment_products_helper_text" translatable="false">Enabling this setting will bundle all Credit Card payment products to a single list item (Payment Product Group). The IIN Details service call can be used to determine what card product is actually used by the consumer.</string>
     <string name="payment_configuration_configure_environment_production" translatable="false">Environment is production</string>
     <string name="payment_configuration_configure_google_pay" translatable="false">Configure Google Pay</string>
     <string name="payment_configuration_merchant_id_hint" translatable="false">Merchant ID</string>

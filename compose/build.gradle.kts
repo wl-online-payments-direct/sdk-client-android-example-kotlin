@@ -85,7 +85,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:$composeMaterialVersion")
     implementation("androidx.activity:activity-compose:1.9.0")
     implementation("com.google.accompanist:accompanist-navigation-animation:0.34.0")
-    
+
     // Google pay
     val googlePayVersion = rootProject.extra["googlePay_version"]
     implementation("com.google.android.gms:play-services-wallet:$googlePayVersion")
